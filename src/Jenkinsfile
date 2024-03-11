@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Компиляция Java кода
+                sh 'javac *.java'
+            }
+        }
+        stage('Archive Artifact') {
+            steps {
+                // Архивация собранного бинарника
+                archiveArtifacts artifacts: '*.class', allowEmptyArchive: true
+            }
+        }
+    }
+}
