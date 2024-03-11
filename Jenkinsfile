@@ -16,7 +16,7 @@ pipeline {
                 script {
                     dir('src') {
                         sh 'javac Main.java Dinosaur.java'
-                        sh 'jar cvf dinosaurs.jar *.class'
+                        sh 'jar cvfe dinosaurs.jar Main *.class'
                     }
                 }
             }
